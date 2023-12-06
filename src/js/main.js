@@ -1,10 +1,11 @@
-const buttonSelector = document.querySelector('.nav-button');
-document.querySelector('nav').style.display = 'none';
-buttonSelector.style.display = 'block';
+document.documentElement.classList.add('js-enabled');
 
-buttonSelector.addEventListener('click', ()=>{
-    buttonSelector.classList.toggle('is-opened');
-    document.querySelector('nav').style.display = 'inline-block';
+document.querySelector('.nav-button').addEventListener('click', () => {
+    if (document.querySelector('main').classList.contains('is-opened')) {
+        document.querySelector('main').classList.remove('is-opened');
+    } else {
+        document.querySelector('main').classList.add('is-opened');
+    }
 });
 
 
